@@ -1,0 +1,30 @@
+tour:
+    pattern:  /
+    defaults: { _controller: "chabTestTourBundle:Tour:index" }
+
+tour_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "chabTestTourBundle:Tour:show" }
+
+tour_new:
+    pattern:  /new
+    defaults: { _controller: "chabTestTourBundle:Tour:new" }
+
+tour_create:
+    pattern:  /create
+    defaults: { _controller: "chabTestTourBundle:Tour:create" }
+    requirements: { _method: post }
+
+tour_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "chabTestTourBundle:Tour:edit" }
+
+tour_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "chabTestTourBundle:Tour:update" }
+    requirements: { _method: post|put }
+
+tour_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "chabTestTourBundle:Tour:delete" }
+    requirements: { _method: post|delete }

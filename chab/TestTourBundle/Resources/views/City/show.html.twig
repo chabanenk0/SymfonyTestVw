@@ -1,0 +1,54 @@
+﻿{# {% extends '::base.html.twig' %} #}
+
+{% block body -%}
+    <h1>{{entity.name}}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Город</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Информация</th>
+                <td>{{ entity.info }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+		 <h2>Туры в {{entity.name}}:</h2> 
+    <ul>
+
+    {% for tid,tdata in tours %}
+		<li>
+			<a href="{{ path('tour_show', { 'id': tdata.id }) }}">{{ tdata.name }} </a>
+		</li>
+		 ( Категории:
+		     {% for cid,cdata in tdata.categories %}
+			   <a href="{{ path('category_show', { 'id': cdata.id }) }}">{{ cdata.category }} </a>, 
+			 {% endfor %}
+			) 
+    {% endfor %}
+
+	</ul> 
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('city') }}">
+            К списку городов
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('city_edit', { 'id': entity.id }) }}">
+            Редактировать город
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('city_delete', { 'id': entity.id }) }}" method="post">
+            <input type="hidden" name="_method" value="DELETE" />
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
+{% endblock %}

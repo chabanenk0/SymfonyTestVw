@@ -1,0 +1,51 @@
+chab\TestTourBundle\Entity\Tour:
+    type: entity
+    table: null
+    repositoryClass: chab\TestTourBundle\Entity\TourRepository
+    fields:
+        id:
+            id: true
+            type: integer
+            unsigned: false
+            nullable: false
+            generator:
+                strategy: IDENTITY
+        name:
+            type: string
+            length: 255
+            fixed: false
+            nullable: false
+        city:
+            type: integer
+            unsigned: false
+            nullable: false
+        category:
+            type: integer
+            unsigned: false
+            nullable: false
+        is_public:
+            type: boolean
+            nullable: true
+    manyToOne:
+        City_1:
+          targetEntity: chab\TestTourBundle\Entity\City
+          cascade: { }
+          mappedBy: city
+          inversedBy: null
+          joinColumns:
+             city:
+               referencedColumnName: id
+          orphanRemoval: false
+    manyToMany:
+        categories:
+          targetEntity: chab\TestTourBundle\Entity\Category
+          joinTable:
+           name: tourcategoryconn2
+           joinColumns:
+             tour:
+              referenceColumn: id
+           inverseJoinColumns:
+             category:
+              referenceColumn: id               
+
+    lifecycleCallbacks: {  }

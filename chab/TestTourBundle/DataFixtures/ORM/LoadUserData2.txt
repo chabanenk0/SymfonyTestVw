@@ -1,0 +1,108 @@
+<?php
+namespace chab\TestTourBundle\DataFixtures\ORM;
+
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+use chab\TestTourBundle\Entity\Category;
+use chab\TestTourBundle\Entity\City;
+use chab\TestTourBundle\Entity\Tour;
+
+class LoadUserData2 implements FixtureInterface
+    {
+        /**
+         * {@inheritDoc}
+         */
+        public function load(ObjectManager $manager)
+        {
+
+            $tour1= new Tour();
+            $tour1->setName('Пеший тур по лавре');
+            $tour1->setCity($city1->getId());
+            $tour1->setCategory($category2->getId());
+            $tour1->addCategorie($category2);
+            $tour1->addCategorie($category7);
+            $manager->persist($tour1);
+            $manager->flush();
+
+
+            $tour2= new Tour();
+            $tour2->setName('Автобусный тур по Харькову');
+            $tour2->setCity($city2->getId());
+            $tour2->setCategory($category3->getId());
+            $tour2->addCategorie($category3);
+            $tour2->addCategorie($category6);
+            $tour2->addCategorie($category7);
+            $tour2->addCategorie($category8);
+            $manager->persist($tour2);
+            $manager->flush();
+
+            $tour3= new Tour();
+            $tour3->setName('Автобусный тур по Львову');
+            $tour3->setCity($city3->getId());
+            $tour3->setCategory($category3->getId());
+            $tour3->addCategorie($category3);
+            $tour3->addCategorie($category6);
+            $tour3->addCategorie($category7);
+            $tour3->addCategorie($category8);
+            $manager->persist($tour3);
+            $manager->flush();
+
+            $tour4= new Tour();
+            $tour4->setName('Автобусный тур по Запорожью');
+            $tour4->setCity($city4->getId());
+            $tour4->setCategory($category3->getId());
+            $tour4->addCategorie($category3);
+            $tour4->addCategorie($category7);
+            $manager->persist($tour4);
+            $manager->flush();
+
+            $tour5= new Tour();
+            $tour5->setName('Пеший тур по Черкассах');
+            $tour5->setCity($city5->getId());
+            $tour5->setCategory($category2->getId());
+            $tour5->addCategorie($category2);
+            $tour5->addCategorie($category7);
+            $tour5->addCategorie($category8);
+            $manager->persist($tour5);
+            $manager->flush();
+
+            $tour6= new Tour();
+            $tour6->setName('Автобусный тур в Чигирин');
+            $tour6->setCity($city6->getId());
+            $tour6->setCategory($category3->getId());
+            $tour6->addCategorie($category3);
+            $tour6->addCategorie($category7);
+            $manager->persist($tour6);
+            $manager->flush();
+
+            $tour7= new Tour();
+            $tour7->setName('Автобусный тур в Донецк');
+            $tour7->setCity($city7->getId());
+            $tour7->setCategory($category3->getId());
+            $tour7->addCategorie($category3);
+            $tour7->addCategorie($category7);
+            $manager->persist($tour7);
+            $manager->flush();
+
+            $tour8= new Tour();
+            $tour8->setName('Автобусный тур в Донецк');
+            $tour8->setCity($city8->getId());
+            $tour8->setCategory($category3->getId());
+            $tour8->addCategorie($category3);
+            $tour8->addCategorie($category7);
+            $manager->persist($tour8);
+            $manager->flush();
+
+            $tour9= new Tour();
+            $tour9->setName('Тур по побережью Севастополя');
+            $tour9->setCity($city9->getId());
+            $tour9->setCategory($category4->getId());
+            $tour9->addCategorie($category4);
+            $tour9->addCategorie($category7);
+            $manager->persist($tour9);
+            $manager->flush();
+
+        }
+    }
+
+?>

@@ -1,0 +1,16 @@
+chab\TestTourBundle\Entity\TourCategoryConn3:
+    type: entity
+    table: null
+    repositoryClass: chab\TestTourBundle\Entity\TourCategoryConn3Repository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        tour:
+            type: integer
+        category:
+            type: integer
+
+    lifecycleCallbacks: {  }

@@ -1,0 +1,7 @@
+parameters:
+#    chab_test_tour.example.class: chab\TestTourBundle\Example
+
+services:
+#    chab_test_tour.example:
+#        class: %chab_test_tour.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

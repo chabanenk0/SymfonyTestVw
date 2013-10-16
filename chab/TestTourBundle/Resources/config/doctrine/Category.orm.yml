@@ -1,0 +1,29 @@
+chab\TestTourBundle\Entity\Category:
+    type: entity
+    table: null
+    repositoryClass: chab\TestTourBundle\Entity\CategoryRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        category:
+            type: string
+            length: '30'
+        info:
+            type: string
+            length: 255
+    manyToMany:
+        tours:
+          targetEntity: chab\TestTourBundle\Entity\Tour
+          joinTable:
+           name: tourcategoryconn
+           joinColumns:
+             category:
+              referenceColumn: id
+           inverseJoinColumns:
+             tour4:
+              referenceColumn: id               
+             
+    lifecycleCallbacks: {  }
